@@ -1,3 +1,4 @@
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 var specialCharacters = [
@@ -86,6 +87,7 @@ var upperCasedCharacters = [
   'Z',
 ];
 
+// Function to get password length
 function getPasswordLength() {
   var length;
   for (;;) {
@@ -98,6 +100,7 @@ function getPasswordLength() {
   return length;
 }
 
+// Function to select types of charecters in pasword
 function confirmCharacterType(message) {
   var input;
   for (;;) {
@@ -110,6 +113,7 @@ function confirmCharacterType(message) {
   return input === "yes";
 }
 
+// Function to generate Password
 function generatePassword() {
   var length = getPasswordLength();
   var useUppercase = confirmCharacterType("Do you want to include uppercase letters in your password? (Yes or No)");
@@ -128,10 +132,12 @@ function generatePassword() {
   return password;
 }
 
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
