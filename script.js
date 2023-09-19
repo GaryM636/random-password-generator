@@ -91,11 +91,11 @@ var upperCasedCharacters = [
 function getPasswordLength() {
   var length;
   for (;;) {
-    length = Number(prompt("Choose how many characters long you'd like your password to be (between 8-128 characters): "));
+    length = Number(prompt("How many charecters would you like you password to be? (between 8-128 characters): "));
     if (!isNaN(length) && length >= 8 && length <= 128) {
       break;
     }
-    alert("Password length must be a number between 8-128 characters");
+    alert("Password length must be a number (between 8-128 characters)");
   }
   return length;
 }
@@ -116,9 +116,9 @@ function confirmCharacterType(message) {
 // Function to generate Password
 function generatePassword() {
   var length = getPasswordLength();
-  var useUppercase = confirmCharacterType("Do you want to include uppercase letters in your password? (Yes or No)");
-  var useNumbers = confirmCharacterType("Do you want to include numbers in your password? (Yes or No)");
-  var useSpecialChars = confirmCharacterType("Do you want to include special characters in your password? (Yes or No)");
+  var useUppercase = confirmCharacterType("Include uppercase letters in your password? (Yes or No)");
+  var useNumbers = confirmCharacterType("Include numbers in your password? (Yes or No)");
+  var useSpecialChars = confirmCharacterType("Include special characters in your password? (Yes or No)");
 
   var characters = lowerCasedCharacters;
   if (useUppercase) characters = characters.concat(upperCasedCharacters);
